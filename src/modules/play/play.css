@@ -1,0 +1,165 @@
+.analysis-loading {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 480px;
+}
+
+.acc-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.acc {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.acc b {
+  font-size: 22px;
+}
+
+.acc .muted {
+  grid-column: 2;
+}
+
+.eval-graph {
+  width: 100%;
+  height: 90px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.eval-bg {
+  fill: #3a3733;
+}
+
+.eval-white {
+  fill: #f2efe8;
+}
+
+.eval-mid {
+  stroke: #9a948a;
+  stroke-dasharray: 4 4;
+}
+
+.eval-cursor {
+  stroke: var(--sq-focus);
+  stroke-width: 2;
+}
+
+.eval-dot.blunder {
+  fill: var(--sq-bad);
+}
+
+.eval-dot.mistake {
+  fill: var(--warning);
+}
+
+.move-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px 6px;
+  max-height: 220px;
+  overflow-y: auto;
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 13px;
+}
+
+.mv {
+  text-align: left;
+  border: none;
+  background: none;
+  color: var(--text);
+  padding: 3px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  gap: 6px;
+}
+
+.mv:hover {
+  background: var(--surface-2);
+}
+
+.mv.cur {
+  background: var(--accent-soft);
+  font-weight: 700;
+}
+
+.mv.blunder {
+  color: var(--danger);
+  font-weight: 700;
+}
+
+.mv.mistake {
+  color: var(--warning);
+  font-weight: 700;
+}
+
+.mv.inaccuracy {
+  color: var(--sq-focus);
+}
+
+.play-setup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 760px;
+}
+
+.level-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px;
+}
+
+.level-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+}
+
+.level-card.on {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.color-pick {
+  display: flex;
+  gap: 8px;
+}
+
+.game-moves {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  max-height: 200px;
+  overflow-y: auto;
+  background: var(--surface-2);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.pgn-input {
+  width: 100%;
+  min-height: 180px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 13px;
+}

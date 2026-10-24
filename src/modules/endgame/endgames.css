@@ -1,0 +1,60 @@
+.endgames {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 1100px;
+}
+
+.eg-group {
+  font-size: 17px;
+  margin: 10px 0;
+}
+
+.eg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 10px;
+}
+
+.eg-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.eg-card:hover {
+  border-color: var(--accent);
+}
+
+.eg-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.eg-status {
+  align-self: flex-start;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text-muted);
+}
+
+.eg-status.due {
+  background: color-mix(in srgb, var(--warning) 20%, var(--surface));
+  color: var(--text);
+}
+
+.eg-status.learned {
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}

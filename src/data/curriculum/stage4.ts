@@ -1,0 +1,142 @@
+import type { Stage } from './types'
+
+export const STAGE4: Stage = {
+  id: 4,
+  title: 'İleri',
+  description: 'Sessiz hamleler, savunma, piyon yapıları, şah saldırısı ve ileri oyunsonları.',
+  units: [
+    {
+      id: 'u4-quiet-defense',
+      stage: 4,
+      title: 'Sessiz hamleler ve savunma',
+      summary: 'Şah ya da alma olmayan en güçlü hamleyi ve tek kurtaran savunmayı bulmak.',
+      skills: ['calculation', 'strategy'],
+      steps: [
+        {
+          type: 'text',
+          title: 'Zorlayıcı olmayan güç',
+          text: 'Bazı kombinasyonların anahtar hamlesi bir şah ya da alma değil, kaçınılmaz bir tehdit yaratan **sessiz hamledir**. Savunmada da benzer: panik yapmadan önce rakibin tehdidini tam olarak tanımla, sonra hem tehdidi karşılayan hem de karşı şans yaratan hamleyi ara.',
+          moves: 'e4 c5 Nf3 d6 d4 cxd4 Nxd4 Nf6 Nc3 a6',
+        },
+        { type: 'puzzles', text: 'Pratik: sessiz hamleler.', themes: ['quietMove'], count: 6 },
+        { type: 'puzzles', text: 'Pratik: savunma hamleleri.', themes: ['defensiveMove'], count: 6 },
+      ],
+      exam: { themes: ['quietMove', 'defensiveMove'], count: 8, pass: 0.6 },
+    },
+    {
+      id: 'u4-structures',
+      stage: 4,
+      title: 'Piyon yapıları ve planlar',
+      summary: 'İzole vezir piyonu ve Carlsbad yapısı.',
+      skills: ['strategy'],
+      steps: [
+        {
+          type: 'text',
+          title: 'İzole vezir piyonu (IQP)',
+          text: 'd4 piyonu komşu piyonlardan yoksun. **IQP\'li taraf** (beyaz) için: alan ve aktif taşlar; e5 karesine at, şah kanadına saldırı, d4-d5 kırılması. **Karşı taraf** (siyah) için: d5 karesini abluka (en iyi abluka taşı at), taşları değişmek — oyunsonuna yaklaştıkça izole piyon zayıflar.',
+          moves: 'e4 c6 d4 d5 exd5 cxd5 c4 Nf6 Nc3 e6 Nf3 Be7 cxd5 Nxd5',
+          marks: ['d4', 'd5', 'e5'],
+        },
+        {
+          type: 'text',
+          title: 'Carlsbad yapısı ve azınlık saldırısı',
+          text: 'Vezir gambiti değişme varyantında oluşan yapı. Beyazın klasik planı **azınlık saldırısıdır**: vezir kanadında 2 piyonla (a, b) siyahın 3 piyonuna (a, b, c) saldırmak. b4-b5 ile c6 piyonu değişmeye zorlanır ve siyahta zayıf bir c6 ya da d5 piyonu kalır.',
+          moves: 'd4 d5 c4 e6 Nc3 Nf6 cxd5 exd5 Bg5 c6 Qc2 Be7 e3 Nbd7 Bd3 O-O Nf3 Re8 O-O',
+          arrows: [
+            ['b2', 'b4', 'blue'],
+            ['b4', 'b5', 'blue'],
+          ],
+        },
+        {
+          type: 'plan',
+          text: 'Siyahla oynuyorsun: beyazın izole vezir piyonu var. Planına uygun bir hamle yap.',
+          moves: 'e4 c6 d4 d5 exd5 cxd5 c4 Nf6 Nc3 e6 Nf3 Be7 cxd5 Nxd5 Bd3 O-O O-O Nc6 Re1',
+          good: ['d5f6'],
+          tolerance: 20,
+          explanation: 'IQP\'ye karşı: d5 karesini kontrol et ve abluka et, taşları değiş. …Nf6 hem d5\'i tutar hem de şahı korur (beyazın Bd3-h7 hedefine karşı). Sonra …b6, …Bb7 ile d5 üzerindeki kontrol artırılır.',
+        },
+        {
+          type: 'plan',
+          text: 'Beyazla oynuyorsun (Carlsbad yapısı). Vezir kanadında azınlık saldırısını hazırla.',
+          moves: 'd4 d5 c4 e6 Nc3 Nf6 cxd5 exd5 Bg5 c6 Qc2 Be7 e3 Nbd7 Bd3 O-O Nf3 Re8 O-O Nf8',
+          good: ['a1b1', 'a2a3', 'h2h3'],
+          tolerance: 30,
+          explanation: 'Azınlık saldırısı: Rab1, b4, b5 ile c6 piyonuna saldır; değişimden sonra siyahta zayıf bir c6 ya da d5 piyonu kalır. a3 de b4\'ü destekleyen hazırlık hamlesidir; h3 ise …Bg4 ve …Ng4 fikirlerine karşı faydalı bir bekleme hamlesidir.',
+        },
+        { type: 'puzzles', text: 'Pratik: usta oyunlarından pozisyonlar.', themes: ['master', 'quietMove'], count: 6 },
+      ],
+    },
+    {
+      id: 'u4-bishops',
+      stage: 4,
+      title: 'İki fil matı ve zugzwang',
+      summary: 'Fillerle koordinasyon ve hamle zorunluluğunu silaha çevirmek.',
+      skills: ['endgame'],
+      steps: [
+        {
+          type: 'text',
+          title: 'Zugzwang',
+          text: 'Hamle yapmak zorunda olmak bazen bir dezavantajdır: her hamle pozisyonu kötüleştirir. Piyon oyunsonlarında ve basit matlarda (iki fil, fil+at) rakibi zugzwang\'a sokmak temel tekniktir.',
+          fen: '8/8/8/4k3/8/8/8/2B1KB2 w - - 0 1',
+        },
+        { type: 'halfgame', endgameId: 'eg-kbbk' },
+        { type: 'puzzles', text: 'Pratik: zugzwang.', themes: ['zugzwang'], count: 5 },
+      ],
+      exam: { themes: ['zugzwang'], count: 5, pass: 0.6 },
+    },
+    {
+      id: 'u4-geometry',
+      stage: 4,
+      title: 'Hapsolmuş taş, araya girme, hat boşaltma',
+      summary: 'Taşların geometrisinden doğan ileri taktikler.',
+      skills: ['tactics'],
+      steps: [
+        {
+          type: 'text',
+          title: 'Hareket alanı',
+          text: '**Hapsolmuş taş:** kaçacak karesi kalmamış taş (kenardaki at, a7\'de piyon alan fil). **Araya girme:** rakibin iki taşı arasındaki bağlantıyı bir taş koyarak kesmek. **Boşaltma:** kendi taşını tempo kazanarak yoldan çekip bir kareyi ya da hattı başka bir taşa açmak.',
+          moves: 'e4 e5 Nf3 Nc6 Bb5 a6 Ba4 Nf6 O-O Be7 Re1 b5 Bb3 d6 c3 O-O h3',
+        },
+        { type: 'puzzles', text: 'Pratik: hapsolmuş taş.', themes: ['trappedPiece'], count: 4 },
+        { type: 'puzzles', text: 'Pratik: araya girme ve boşaltma.', themes: ['interference', 'clearance'], count: 6 },
+      ],
+      exam: { themes: ['trappedPiece', 'interference', 'clearance'], count: 6, pass: 0.6 },
+    },
+    {
+      id: 'u4-attack',
+      stage: 4,
+      title: 'Şah saldırısı',
+      summary: 'Açık şaha karşı taşları toplamak ve fedakârlıkla bitirmek.',
+      skills: ['tactics', 'calculation'],
+      steps: [
+        {
+          type: 'text',
+          title: 'Saldırının üç koşulu',
+          text: 'Başarılı bir şah saldırısı için: (1) saldırı bölgesinde **sayısal üstünlük**, (2) rakip şahın önündeki **zayıflıklar** (oynamış piyonlar, eksik savunucular), (3) **açık hatlar**. Koşullar oluşunca h7, g7 ya da f7\'ye klasik fedakârlıklar mümkün olur.',
+          moves: 'e4 e6 d4 d5 Nc3 Nf6 Bg5 Be7 e5 Nfd7 h4',
+        },
+        { type: 'puzzles', text: 'Pratik: şah kanadı saldırısı.', themes: ['kingsideAttack', 'exposedKing'], count: 6 },
+        { type: 'puzzles', text: 'Pratik: f2/f7 saldırıları.', themes: ['attackingF2F7'], count: 4 },
+      ],
+      exam: { themes: ['kingsideAttack', 'exposedKing', 'sacrifice'], count: 8, pass: 0.6 },
+    },
+    {
+      id: 'u4-rook-endgames-2',
+      stage: 4,
+      title: 'İleri kale oyunsonları',
+      summary: 'Aktif kale, kesme ve pratik kale oyunsonları.',
+      skills: ['endgame'],
+      steps: [
+        {
+          type: 'text',
+          title: 'Aktiflik her şeydir',
+          text: 'Kale oyunsonlarında altın kural: **kaleni aktif tut**. Pasif savunmadaki kale çoğunlukla kaybeder; bir piyon eksik ama aktif kale çoğu zaman berabere kalır. Serbest piyonların **arkasına** kale koy (kendi piyonunsa iter, rakibinkiyse durdurur). Rakip şahı hatlar boyunca kesmek en güçlü silahtır.',
+          fen: '8/5pk1/6p1/R7/P7/6P1/r4PK1/8 w - - 0 1',
+          arrows: [['a5', 'a8', 'blue']],
+        },
+        { type: 'puzzles', text: 'Pratik: kale oyunsonları.', themes: ['rookEndgame'], count: 7 },
+      ],
+      exam: { themes: ['rookEndgame'], count: 6, pass: 0.6 },
+    },
+  ],
+}

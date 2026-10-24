@@ -1,0 +1,80 @@
+.openings {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 1000px;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.course-card:hover {
+  border-color: var(--accent);
+}
+
+.course-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.side-dot {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--text);
+}
+
+.side-dot.w {
+  background: #fff;
+}
+
+.side-dot.b {
+  background: #222;
+}
+
+.line-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.line-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  flex-wrap: wrap;
+}
+
+.line-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.line-moves {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  background: var(--surface-2);
+  border-radius: 8px;
+  padding: 8px 10px;
+  word-spacing: 2px;
+}

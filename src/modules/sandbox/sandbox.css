@@ -1,0 +1,84 @@
+.sandbox {
+  display: grid;
+  grid-template-columns: minmax(0, 640px) minmax(260px, 340px);
+  gap: 24px;
+  align-items: start;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.side h2 {
+  font-size: 18px;
+}
+
+.status {
+  margin: 0;
+  font-weight: 600;
+}
+
+.status.over {
+  color: var(--accent-strong);
+}
+
+.moves {
+  max-height: 280px;
+  overflow-y: auto;
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 14px;
+  background: var(--surface-2);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.move-row {
+  display: grid;
+  grid-template-columns: 36px 1fr 1fr;
+}
+
+.move-num {
+  color: var(--text-muted);
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.fen {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.fen-row {
+  display: flex;
+  gap: 6px;
+}
+
+.fen-row input {
+  flex: 1;
+  min-width: 0;
+  padding: 7px 9px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 12px;
+}
+
+.fen-error {
+  color: var(--danger);
+}
+
+@media (max-width: 1000px) {
+  .sandbox {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,105 @@
+.puzzle {
+  display: grid;
+  grid-template-columns: minmax(0, 640px) minmax(260px, 360px);
+  gap: 24px;
+  align-items: start;
+}
+
+.puzzle-side {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.turn-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.turn-badge .dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--text);
+}
+
+.turn-badge.w .dot {
+  background: #fff;
+}
+
+.turn-badge.b .dot {
+  background: #222;
+}
+
+.msg {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 15px;
+  background: var(--surface-2);
+}
+
+.msg.good {
+  background: color-mix(in srgb, var(--sq-good) 18%, var(--surface));
+  color: var(--text);
+  border-left: 4px solid var(--sq-good);
+}
+
+.msg.bad {
+  background: color-mix(in srgb, var(--sq-bad) 15%, var(--surface));
+  border-left: 4px solid var(--sq-bad);
+}
+
+.msg.info {
+  border-left: 4px solid var(--sq-focus);
+}
+
+.puzzle-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1000px) {
+  .puzzle {
+    grid-template-columns: 1fr;
+  }
+}
+
+.goal {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.moves-left {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+}
+
+.progress {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  overflow: hidden;
+}
+
+.progress > div {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 999px;
+  transition: width 0.3s;
+}
+
+.hint-list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}

@@ -1,0 +1,118 @@
+.lesson-head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.lesson-head .crumbs {
+  font-size: 13px;
+}
+
+.lesson-head .crumbs a {
+  color: var(--text-muted);
+}
+
+.step-dots {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.step-dots button {
+  width: 30px;
+  height: 8px;
+  border-radius: 999px;
+  border: none;
+  padding: 0;
+  background: var(--surface-2);
+  cursor: pointer;
+}
+
+.step-dots button.done {
+  background: color-mix(in srgb, var(--accent) 55%, var(--surface-2));
+}
+
+.step-dots button.current {
+  background: var(--accent);
+}
+
+.lesson-text {
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.6;
+}
+
+.lesson-footer {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.squares-board {
+  position: relative;
+  width: 100%;
+  max-width: min(640px, calc(100vh - 140px));
+}
+
+.squares-grid {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+}
+
+.squares-grid button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.squares-grid button:hover {
+  background: rgb(255 255 255 / 0.18);
+}
+
+.big-target {
+  font-size: 54px;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: var(--accent-strong);
+}
+
+.set-dots {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.set-dots span {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+.set-dots .ok {
+  background: var(--sq-good);
+  border-color: var(--sq-good);
+}
+
+.set-dots .no {
+  background: var(--sq-bad);
+  border-color: var(--sq-bad);
+}
+
+.set-dots .cur {
+  border: 2px solid var(--accent);
+}
+
+.exam-result {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

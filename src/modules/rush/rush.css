@@ -1,0 +1,32 @@
+.rush-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 640px;
+}
+
+.rush-menu p {
+  margin: 0;
+}
+
+.rush-modes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+}
+
+.rush-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.rush-bar > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.rush-bar b {
+  font-size: 24px;
+  font-variant-numeric: tabular-nums;
+}
