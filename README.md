@@ -1,5 +1,7 @@
 # Satranç Öğretici
 
+https://chesslearner.vercel.app
+
 Seviyeni kısa ve **oynanarak yapılan** bir testle ölçen, sonra seni bulunduğun yerden adım adım yukarı taşıyan,
 tamamen tarayıcıda çalışan bir satranç antrenörü.
 
